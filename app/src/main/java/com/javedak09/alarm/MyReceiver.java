@@ -13,11 +13,8 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if ("android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
 
-            //Intent pushIntent = new Intent(context, MyService.class);
-            //context.startService(pushIntent);
-
-            Intent pushIntent = new Intent(context, MainActivity.class);
-            context.startActivity(pushIntent);
+            Intent pushIntent = new Intent(context, MyService.class);
+            context.startService(pushIntent);
         }
     }
 }

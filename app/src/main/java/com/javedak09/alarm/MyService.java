@@ -40,6 +40,10 @@ public class MyService extends Service {
         Toast.makeText(this, "ServiceClass.onStart()", Toast.LENGTH_LONG).show();
         Log.d("Testing", "Service got started");
 
+        Intent intent1 = new Intent(this, MainActivity.class);
+        intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent1);
+
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         Ringtone ringtone = RingtoneManager.getRingtone(this, uri);
         ringtone.play();
